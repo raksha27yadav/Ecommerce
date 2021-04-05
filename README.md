@@ -1,6 +1,7 @@
 This is my Ecommerce website like amazon,flipkart etc. 
-It has the following key feactures:
-1) Adding and removing items from cart
+
+It has the following key features:
+1) Adding and removing items from cart.
 2) Quickview of the particular product.
 3) Contact page
 4) Search box
