@@ -1,0 +1,73 @@
+{% extends 'blog/basic.html' %}
+{% block css %}
+#pn{
+    
+    padding-right:100px;
+    text-align:center;
+}
+#np{
+    padding-right:80px;
+    text-align:center
+
+}
+{% endblock  %}
+{% block body %}
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-8 blog-main">
+            <h3 class="pb-4 mb-4 font-italic border-bottom">
+                {{postb.title}}
+                
+            </h3>
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{postb.head0}}</h2>
+                <p class="blog-post-meta">{{post.pub_date}}</p>
+                <p>{{postb.chead0}}</p>
+                <h2>{{postb.head1}}</h2>
+                <p>{{postb.chead1}}</p>
+                <h2>{{postb.head2}}</h2>
+                <p>{{postb.chead2}}</p>
+                <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/{{postb.post_id}}" data-numposts="5" data-width=""></div>
+            </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+        <aside class="col-md-4 blog-sidebar">
+            <div class="p-4 mb-3 bg-light rounded">
+                <h4 class="font-italic">About</h4>
+                <p class="mb-0">My Awesome Cart is an <em>ecommerce website</em>. You can use it for buying and searching items online. </p>
+            </div>
+            <div class="p-4">
+                <h4 class="font-italic">Contact Us On: </h4>
+                <ol class="list-unstyled">
+                    <li><a href="#">GitHub</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <p></p>
+                    <li><div class="fb-like" data-href="http://127.0.0.1:8000/blog/blogpost/{{postb.post_id}}" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div></li>
+                </ol>
+            </div>
+        </aside><!-- /.blog-sidebar -->
+    </div>
+</div>
+<p></p>
+<div class="container">
+    <div class='row'>
+        <div class='col-4'>
+    {% if pid > 0 %}
+    <a href="{{pid}}" class="btn btn-primary btn-lg active" id='np' role="button" aria-pressed="true">Previous blog</a>
+    
+    {% endif %}
+
+</div>
+{% if nid <= n %}
+    
+   <div class='col-4'></div>
+   <a href="{{nid}}" class="btn btn-primary btn-lg active" id="pn" role="button" aria-pressed="true">Next blog </a>
+
+    </div>
+    </div>
+    {% endif %}
+</div>
+
+
+
+{% endblock %}
